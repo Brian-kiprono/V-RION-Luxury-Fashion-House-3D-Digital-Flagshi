@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-ivory: #F6F4EF;
+  --color-stone: #E5E2DA;
+  --color-taupe: #8E8377;
+  --color-silver: #B4B1AA;
+  --color-charcoal: #1A1A1D;
+  --color-obsidian: #0F0F10;
+  --color-burgundy: #5C1E26;
+  --color-forest: #1F362C;
+  --color-midnight: #192338;
+  --color-sand: #D2C6B2;
+  --color-chocolate: #4A3528;
+  --color-olive: #535844;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #F6F4EF;
+    color: #0F0F10;
+    font-family: var(--font-sans);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: var(--font-display);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom hairline scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6F4EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C7C3B9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8E8377;
+}
